@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -13,6 +15,9 @@ import java.util.Objects;
 
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Trip.findAll", query = "select t from Trip as t")
+})
 @Table(name = "TRIP")
 public class Trip implements Serializable {
 
