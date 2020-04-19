@@ -2,11 +2,20 @@
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xml:lang="en" lang="en">
 <head>
-    <title>Title</title>
+    <title>Let's Travel!</title>
 </head>
 <body>
+    <h2>This is your travel agency for 2020!</h2>
+
+    <h2>Trips that are now available:</h2>
+    <ol>
+        <ui:repeat value="#{trips.allTrips}" var="trip">
+            <li>#{trip.name}</li>
+        </ui:repeat>
+    </ol>
+
 
 </body>
 </html>
