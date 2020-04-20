@@ -32,7 +32,7 @@ public class Guides {
     @Transactional
     public String createGuide(){
         this.guideDAO.persist(guideToCreate);
-        return "success";
+        return "index?faces-redirect=true";
     }
 
     private void loadAllGuides(){

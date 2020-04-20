@@ -2,6 +2,7 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -33,8 +35,8 @@ public class Guide {
 
     private String name;
 
-    @OneToMany(mappedBy = "guide")
-    private List<Trip> trips;
+    @OneToMany(mappedBy = "guide", fetch = FetchType.EAGER)
+    private List<Trip> trips = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
