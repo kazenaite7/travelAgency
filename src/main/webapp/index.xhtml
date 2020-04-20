@@ -10,16 +10,16 @@
 <body>
     <h2>This is your travel agency for 2020!</h2>
 
-    <h2>Trips that are now available:</h2>
+    <h2>Guides that are now available:</h2>
     <ol>
-        <ui:repeat value="#{trips.allTrips}" var="trip">
-            <li>#{trip.name}</li>
+        <ui:repeat value="#{guides.allGuides}" var="guide">
+            <li><h:link value="#{guide.name}" outcome="trips?guideId=#{guide.id}" /></li>
         </ui:repeat>
     </ol>
 
     <h:form>
-        <h:inputText value="#{trips.tripToCreate.name}" required="true" />
-        <h:commandButton value="Add new trip" action="#{trips.createTrip}" />
+        <h:inputText value="#{guides.guideToCreate.name}" required="true" />
+        <h:commandButton value="Add new guide" action="#{guides.createGuide}" />
     </h:form>
 
 </body>
