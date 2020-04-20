@@ -15,12 +15,15 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Trip.findAll", query = "select t from Trip as t")
 })
 @Table(name = "TRIP")
+@Getter @Setter
 public class Trip implements Serializable {
 
     @Id
@@ -40,31 +43,6 @@ public class Trip implements Serializable {
 
     public Trip(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Guide getGuide() {
-        return guide;
-    }
-
-    public void setGuide(Guide guide) {
-        this.guide = guide;
     }
 
     @Override
