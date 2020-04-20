@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -29,6 +31,10 @@ public class Trip implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name="GUIDE_ID")
+    private Guide guide;
+
     public Trip() {
     }
 
@@ -51,6 +57,14 @@ public class Trip implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Guide getGuide() {
+        return guide;
+    }
+
+    public void setGuide(Guide guide) {
+        this.guide = guide;
     }
 
     @Override
