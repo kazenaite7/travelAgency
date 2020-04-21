@@ -4,14 +4,15 @@ package persistance;
 import entities.Guide;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
-public class GuideDAO {
+public class GuidesDAO {
 
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public List<Guide> loadAll() {

@@ -4,7 +4,7 @@ package usecases;
 import entities.Guide;
 import lombok.Getter;
 import lombok.Setter;
-import persistance.GuideDAO;
+import persistance.GuidesDAO;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -16,7 +16,7 @@ import java.util.List;
 public class Guides {
 
     @Inject
-    private GuideDAO guideDAO;
+    private GuidesDAO guidesDAO;
 
     @Getter @Setter
     private Guide guideToCreate = new Guide();
@@ -31,11 +31,11 @@ public class Guides {
 
     @Transactional
     public String createGuide(){
-        this.guideDAO.persist(guideToCreate);
+        this.guidesDAO.persist(guideToCreate);
         return "index?faces-redirect=true";
     }
 
     private void loadAllGuides(){
-        this.allGuides = guideDAO.loadAll();
+        this.allGuides = guidesDAO.loadAll();
     }
 }

@@ -11,10 +11,10 @@
                         password="sa">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="mybatis.model" targetProject="MAVEN" />
+        <javaModelGenerator targetPackage="myBatis.model" targetProject="MAVEN" />
 
         <sqlMapGenerator targetPackage="usecases.mybatis.xml" targetProject="MAVEN" />
-        <javaClientGenerator type="XMLMAPPER" targetPackage="mybatis.dao" targetProject="MAVEN" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="myBatis.dao" targetProject="MAVEN" />
 
 
         <table schema="public" tableName="guide">

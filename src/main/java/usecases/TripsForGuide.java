@@ -5,7 +5,7 @@ import entities.Guide;
 import entities.Trip;
 import lombok.Getter;
 import lombok.Setter;
-import persistance.GuideDAO;
+import persistance.GuidesDAO;
 import persistance.TripsDAO;
 
 import javax.annotation.PostConstruct;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class TripsForGuide implements Serializable {
 
     @Inject
-    private GuideDAO guideDAO;
+    private GuidesDAO guidesDAO;
 
     @Inject
     private TripsDAO tripsDAO;
@@ -36,7 +36,7 @@ public class TripsForGuide implements Serializable {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer guideId = Integer.parseInt(requestParameters.get("guideId"));
-        this.guide = guideDAO.findOne(guideId);
+        this.guide = guidesDAO.findOne(guideId);
     }
 
     @Transactional

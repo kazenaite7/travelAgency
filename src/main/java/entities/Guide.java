@@ -35,7 +35,7 @@ public class Guide {
 
     private String name;
 
-    @OneToMany(mappedBy = "guide", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "guide")
     private List<Trip> trips = new ArrayList<>();
 
     @Override

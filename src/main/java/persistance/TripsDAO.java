@@ -10,7 +10,8 @@ import java.util.List;
 
 @ApplicationScoped
 public class TripsDAO {
-    @PersistenceContext
+
+    @Inject
     private EntityManager em;
 
     public List<Trip> loadAll() {

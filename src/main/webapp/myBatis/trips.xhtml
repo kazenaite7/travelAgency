@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
-    <h2>Trips guided by #{tripsForGuide.guide.name} guide:</h2>
+    <h2>Trips pf #{tripsForGuide.guide.name} guide:</h2>
     <ol>
         <ui:repeat value="#{tripsForGuide.guide.trips}" var="trip">
             <li>#{trip.name}</li>
@@ -15,10 +15,10 @@
     </ol>
     <h:form>
         <h:inputText a:placeholder="name" value="#{tripsForGuide.tripToCreate.name}" required="true" />
-        <h:commandButton value="Add a trip for guide" action="#{tripsForGuide.createTrip}" >
+        <h:commandButton value="Add trip for guide" action="#{tripsForGuide.createTrip}" >
             <f:param name="guideId" value="#{tripsForGuide.guide.id}" />
         </h:commandButton>
     </h:form>
-    <h:link outcome="index" value="Back to guides page"/>
+    <h:link outcome="/myBatis/guides" value="Back to guides page"/>
 </h:body>
 </html>
