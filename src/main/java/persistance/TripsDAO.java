@@ -25,4 +25,12 @@ public class TripsDAO {
     public void persist(Trip trip){
         this.em.persist(trip);
     }
+
+    public Trip findOne(Integer id){
+        return em.find(Trip.class, id);
+    }
+
+    public Trip update(Trip trip){
+        return em.merge(trip);
+    }
 }

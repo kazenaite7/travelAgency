@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
@@ -34,9 +35,16 @@ public class Trip implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "PRICE")
+    private Integer price;
+
     @ManyToOne
     @JoinColumn(name="GUIDE_ID")
     private Guide guide;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     public Trip() {
     }
