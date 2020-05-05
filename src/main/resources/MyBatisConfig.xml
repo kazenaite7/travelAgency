@@ -11,7 +11,7 @@
         <environment id="development">
             <transactionManager type="MANAGED"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="openejb:Resource/TravelDataSource"/>
+                <property name="data_source" value="TravelDataSource"/>
             </dataSource>
         </environment>
     </environments>
