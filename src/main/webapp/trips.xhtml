@@ -10,7 +10,9 @@
     <h2>Trips guided by #{tripsForGuide.guide.name} guide:</h2>
     <ol>
         <ui:repeat value="#{tripsForGuide.guide.trips}" var="trip">
-            <li>#{trip.name}</li>
+            <li>
+                <h:link value="#{trip.name} price: #{trip.tripPrice}" outcome="tripDetails?tripId=#{trip.id}" />
+            </li>
         </ui:repeat>
     </ol>
     <h:form>

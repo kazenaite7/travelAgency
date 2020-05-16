@@ -38,12 +38,19 @@ public class Trip implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "TRIP_PRICE")
+    private Integer tripPrice;
+
     @Column(name = "PRICE")
     private Integer price;
 
     @ManyToOne
     @JoinColumn(name="GUIDE_ID")
     private Guide guide;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     @ManyToMany(mappedBy = "trips")
     private List<Traveler> travelers = new ArrayList<>();

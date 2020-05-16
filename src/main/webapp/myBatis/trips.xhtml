@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
-    <h2>Trips pf #{tripsForGuide.guide.name} guide:</h2>
+    <h2>Trips of #{tripsForGuide.guide.name} guide:</h2>
     <ol>
         <ui:repeat value="#{tripsForGuide.guide.trips}" var="trip">
             <li>#{trip.name}</li>
