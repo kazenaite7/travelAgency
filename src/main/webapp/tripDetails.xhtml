@@ -16,6 +16,15 @@
         </h:commandButton>
         <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
     </h:form>
+
+    <h:form>
+        <h:outputText value="#{generateTripPrice.tripPriceGenerationStatus}" />
+        <h:commandButton value="Generate trip price?" disabled="#{generateTripPrice.tripPriceGenerationRunning}"
+                         action="#{generateTripPrice.generateNewTripPrice()}">
+            <f:param name="tripId" value="#{updateTripDetails.trip.id}" />
+        </h:commandButton>
+    </h:form>
+
     <h:link outcome="index" value="Back to home page"/>
 </h:body>
 </html>
