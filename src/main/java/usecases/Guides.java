@@ -4,7 +4,7 @@ package usecases;
 import entities.Guide;
 import lombok.Getter;
 import lombok.Setter;
-import persistance.GuidesDAO;
+import persistence.GuidesDAO;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;

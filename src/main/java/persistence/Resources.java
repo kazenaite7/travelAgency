@@ -1,4 +1,4 @@
-package persistance;
+package persistence;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;

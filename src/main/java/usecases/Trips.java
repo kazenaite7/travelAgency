@@ -4,12 +4,11 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
 
 import entities.Trip;
-import persistance.TripsDAO;
+import persistence.TripsDAO;
 
 @Model
 public class Trips implements Serializable {

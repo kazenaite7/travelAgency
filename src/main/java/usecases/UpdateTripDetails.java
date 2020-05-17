@@ -4,7 +4,7 @@ import entities.Trip;
 import interceptors.LoggedInvocation;
 import lombok.Getter;
 import lombok.Setter;
-import persistance.TripsDAO;
+import persistence.TripsDAO;
 
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;

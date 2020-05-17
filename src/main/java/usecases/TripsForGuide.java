@@ -6,8 +6,8 @@ import entities.Trip;
 import interceptors.LoggedInvocation;
 import lombok.Getter;
 import lombok.Setter;
-import persistance.GuidesDAO;
-import persistance.TripsDAO;
+import persistence.GuidesDAO;
+import persistence.TripsDAO;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
