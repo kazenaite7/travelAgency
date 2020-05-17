@@ -1,6 +1,7 @@
 package usecases;
 
 import entities.Trip;
+import interceptors.LoggedInvocation;
 import lombok.Getter;
 import lombok.Setter;
 import persistance.TripsDAO;
@@ -35,6 +36,7 @@ public class UpdateTripDetails implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String updateTripPrice() {
         try{
             tripsDAO.update(this.trip);

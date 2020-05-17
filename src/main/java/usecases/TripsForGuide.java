@@ -3,6 +3,7 @@ package usecases;
 
 import entities.Guide;
 import entities.Trip;
+import interceptors.LoggedInvocation;
 import lombok.Getter;
 import lombok.Setter;
 import persistance.GuidesDAO;
@@ -40,6 +41,7 @@ public class TripsForGuide implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String createTrip() {
         tripToCreate.setGuide(this.guide);
         tripsDAO.persist(tripToCreate);
