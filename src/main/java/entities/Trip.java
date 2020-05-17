@@ -55,11 +55,6 @@ public class Trip implements Serializable {
     @ManyToMany(mappedBy = "trips")
     private List<Traveler> travelers = new ArrayList<>();
 
-
-    @Version
-    @Column(name = "OPT_LOCK_VERSION")
-    private Integer version;
-
     public Trip() {
     }
 

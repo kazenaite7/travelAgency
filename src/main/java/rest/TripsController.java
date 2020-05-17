@@ -1,8 +1,10 @@
 package rest;
 
+import entities.Guide;
 import entities.Trip;
 import lombok.Getter;
 import lombok.Setter;
+import persistence.GuidesDAO;
 import persistence.TripsDAO;
 import rest.contracts.TripDto;
 
@@ -12,6 +14,7 @@ import javax.persistence.OptimisticLockException;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -27,6 +30,27 @@ public class TripsController {
     @Setter
     @Getter
     private TripsDAO tripsDAO;
+
+    @Path("/{id}/{tripPrice}")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
+    public Response create(@PathParam("id") final Integer id, @PathParam("tripPrice") final Integer tripPrice) {
+        System.out.println("POSSSSTTTTT suveike");
+
+        Trip trip = tripsDAO.findOne(id);
+        if (trip == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        trip.setTripPrice(tripPrice);
+
+        TripDto tripDto = new TripDto();
+        tripDto.setName(trip.getName());
+        tripDto.setTripPrice(trip.getTripPrice());
+        tripDto.setGuideName(trip.getGuide().getName());
+
+        return Response.ok().build();
+    }
 
     @Path("/{id}")
     @GET
