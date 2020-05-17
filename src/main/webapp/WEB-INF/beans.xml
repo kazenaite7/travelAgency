@@ -9,4 +9,12 @@
     <interceptors>
         <class>interceptors.MethodLogger</class>
     </interceptors>
+
+    <alternatives>
+        <class>services.BudgetTripPriceGenerator</class>
+    </alternatives>
+    <decorators>
+        <class>decorators.TripsDAODecorator</class>
+    </decorators>
+
 </beans>

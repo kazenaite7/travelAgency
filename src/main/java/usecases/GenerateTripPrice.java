@@ -1,7 +1,7 @@
 package usecases;
 
 import interceptors.LoggedInvocation;
-import services.TripPriceGenerator;
+import services.BudgetTripPriceGenerator;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -16,7 +16,7 @@ import java.util.concurrent.Future;
 @Named
 public class GenerateTripPrice implements Serializable {
     @Inject
-    TripPriceGenerator tripPriceGenerator;
+    BudgetTripPriceGenerator budgetTripPriceGenerator;
 
     private Future<Integer> tripPriceGenerationTask = null;
 
@@ -24,7 +24,7 @@ public class GenerateTripPrice implements Serializable {
     public String generateNewTripPrice() {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        tripPriceGenerationTask = tripPriceGenerator.generateTripPrice();
+        tripPriceGenerationTask = budgetTripPriceGenerator.generateTripPrice();
         return  "/tripDetails.xhtml?faces-redirect=true&tripId=" + requestParameters.get("tripId");
     }
 
