@@ -15,7 +15,7 @@ public abstract class TripsDAODecorator implements TripsDAOInterface {
     TripsDAOInterface tripDAO;
 
     public Trip update(Trip trip){
-        if(trip.getPrice() < 200){
+        if(trip.getTripPrice() < 200){
             System.out.println("Budget trip");
         }
         return tripDAO.update(trip);

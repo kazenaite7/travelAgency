@@ -41,9 +41,6 @@ public class Trip implements Serializable {
     @Column(name = "TRIP_PRICE")
     private Integer tripPrice;
 
-    @Column(name = "PRICE")
-    private Integer price;
-
     @ManyToOne
     @JoinColumn(name="GUIDE_ID")
     private Guide guide;
